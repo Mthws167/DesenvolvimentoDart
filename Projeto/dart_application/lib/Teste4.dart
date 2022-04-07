@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void conceitoAluno(){
+void conceitoAluno() {
   print("Informe o nome do Aluno:");
   var aluno = stdin.readLineSync();
 
@@ -15,29 +15,39 @@ void conceitoAluno(){
   int nota03 = int.parse(nota3);
   int nota04 = int.parse(nota4);
 
-  if(nota01<0 && nota01>10){
+  if (nota01 < 0 && nota01 > 10) {
     print("Informe números de 0 a 10!");
-  }else if(nota02<0 && nota02>10){
+  } else if (nota02 < 0 && nota02 > 10) {
     print("Informe números de 0 a 10!");
-  }else if(nota03<0 && nota03>10){
+  } else if (nota03 < 0 && nota03 > 10) {
     print("Informe números de 0 a 10!");
-  }else if(nota04<0 && nota04>10){
+  } else if (nota04 < 0 && nota04 > 10) {
     print("Informe números de 0 a 10!");
   }
 
-  double media = (nota01+nota02+nota03+nota04)/4;
+  double media = (nota01 + nota02 + nota03 + nota04) / 4;
   String aprovado = '';
   String reprovado = '';
-  if(media>=100*0.6){
+  if (media >= 10 * 0.6) {
     aprovado = "Aprovado!";
-  }else{
+  } else {
     reprovado = "Reprovado!";
   }
 
-
   print('''
   ${aluno}:
+
+  Notas:
+    ${nota01}
+    ${nota02}
+    ${nota03}
+    ${nota04}
+
+  Média:
+    ${media}
+
+  --------------
+  O aluno está ${aprovado}${reprovado}
     
   ''');
-
 }
