@@ -23,7 +23,7 @@ void conceitoRepeticao() {
     nome = stdin.readLineSync();
     nomes.add(nome[i]);
     print("Informe o RA do ${i + 1}º aluno:");
-    ra = stdin.readLineSync();
+    ra = stdin.readLineSync()!;
     ras.add(ra[i]);
     print("Informe a média e quantidade de presença do aluno:");
     media = stdin.readLineSync()!;
