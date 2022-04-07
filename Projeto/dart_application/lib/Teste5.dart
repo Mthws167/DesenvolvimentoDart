@@ -20,24 +20,26 @@ void conceitoRepeticao() {
 
   for (int i = 0; i < 3; i++) {
     print("Informe o nome do ${i + 1}º aluno ");
-    nome = stdin.readLineSync();
-    nomes.add(nome[i]);
+    nome = stdin.readLineSync()!;
     print("Informe o RA do ${i + 1}º aluno:");
     ra = stdin.readLineSync()!;
-    ras.add(ra[i]);
     print("Informe a média e quantidade de presença do aluno:");
     media = stdin.readLineSync()!;
     presencaQuant = stdin.readLineSync()!;
+
+    nomes.add(nome[i]);
+    ras.add(ra[i]);
     medias.add(media[i]);
     presencas.add(presencaQuant[i]);
   }
 
   for (int i = 0; i < 2; i++) {
     print("Informe o nome da ${i + 1}º Disciplina");
-    nomeDisciplina = stdin.readLineSync();
-    disciplinas.add(nomeDisciplina[i]);
+    nomeDisciplina = stdin.readLineSync()!;
     print("Informe a CH da ${i + 1}º disciplina:");
     ch = stdin.readLineSync()!;
+
+    disciplinas.add(nomeDisciplina[i]);
     chs.add(ch[i]);
   }
 
@@ -58,10 +60,9 @@ void conceitoRepeticao() {
   print("Informe o aluno que deseja ver o conceito:");
   aluno = stdin.readLineSync();
   disciplina = stdin.readLineSync();
-  if (aluno == "${nome}" && disciplina == "${nomeDisciplina}") {
+  if (aluno == "${nomes}" && disciplina == "${disciplinas}") {
     print('''
             ${nome} :
-            - RA: ${ra}.
             - Média: ${media0}
             - Matérias: ${nomeDisciplina}
             -------------------------
