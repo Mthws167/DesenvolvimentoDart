@@ -6,12 +6,12 @@
 //as functionWithReturnNoParameter;
 //import 'package:funcoes_diversas/functionWithReturnWithParameter.dart'
 //as functionWithReturnWithParameter;
-import 'package:funcoes_diversas/desafioFuncoes.dart' as desafio;
+
 
 void main(List<String> arguments) {
   // functionNoReturnNoParameter.gestorSalario();
   //functionNoReturnWithParameter.show();
   //functionWithReturnNoParameter.show();
   //functionWithReturnWithParameter.show();
-  desafio.desafio();
+
 }
