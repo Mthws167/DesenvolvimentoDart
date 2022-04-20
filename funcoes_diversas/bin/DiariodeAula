@@ -17,3 +17,5 @@ Vários tipos de funções:
 Print() não tem retorno, mas tem parâmetro;
 
 print((media >= 6) ? 'Aprovado!' : 'Reprovado!'); (Modelo mais simples de if else)
+
+Nota: B
