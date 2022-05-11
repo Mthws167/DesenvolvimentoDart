@@ -1,0 +1,85 @@
+28/05/2022 [SÁBADO LETIVO] Avaliação - Desenvolvimento de um projeto mobile com base em um estudo de caso.
+31/05/2022 - Avaliação Dissertativa
+07/06/2022 - Fechamento do diário de aula. Retomada de Conteúdo.
+14/06/2022 - Recuperação
+
+
+
+01) O que é e para que serve o tratamento de erros?
+Caso dê um erro, temos que saber como vamos lidar com esse erro, para isso, utilizamos o tratamento de erro para informar ao usuário e para sabermos o processo que ocorreu o erro
+
+
+02) Quais são as formas de tratamentos de erros?
+Throws e try/catch
+
+
+03) Qual a diferença entre erro e exceção? 
+Erros são problemas muito grandes que não devem ser tratados ou lançados. Exceptions podem ser tratadas e lançadas.  
+
+
+04) Qual a diferença entre exceção implícita (contornável) e explícita (incontornável)? 
+(1)Implícitas: Exceções que não precisam de tratamento e demonstram serem contornáveis.
+(2)Explícitas: Exceções que precisam ser tratadas e que apresentam condições incontornáveis. 
+
+
+05) O que são: (1) throwables; (2) Checked Exception; e (3) Unchecked (Runtime)?
+(1) throwables: interface base para qualquer objeto lançável usando a declaração throw incluindo as classes Error e Exception; 
+(2) Checked Exception: exceções Checked são aquelas no qual você é obrigado a tratá-la, seja com um bloco try-catch ou mesmo com um throws; e 
+(3) Unchecked (Runtime): não é obrigatório o tratamento da mesma, você pode tratar apenas se quiser, se sentir que é necessário para o bom funcionamento da sua aplicação
+
+
+06) Quais são os tratamentos de erros existentes no Dart?
+Os tratamentos de erro são try-catch, stack-trace, on, finally e rethrow.
+
+
+07) Quais são as principais exceções existentes no Dart?
+DefferedLoadException:  Ele é lançado quando uma biblioteca adiada falha ao carregar.
+FromatException:  É a exceção que é lançada quando uma string ou algum outro dado não tem um formato esperado
+IntegerDivisionByZeroException: É lançado quando o número é dividido por zero.
+IOEException:	É a classe base das exceções relacionadas a entradas e saídas.
+IsolateSpawnException:  Ele é lançado quando um isolado não pode ser criado.
+Tempo esgotado: É acionado quando ocorre um tempo limite programado durante a espera por um resultado assíncrono. 
+
+
+
+08) O que é e como funciona o try/catch? Em que caso devemos utilizar? Há uma camada da aplicação correta em utilizá-lo? Exemplifique.
+Try-catch é usado para que em um dado momento em que um código possa gerar um erro inesperado, o programador consiga manipular as possibilidades e exceções.
+Quando o sistema captura alguma exceção o fluxo do código fica interrompido.
+Stack trace é um relatório dos stacks frames ativos em um determinado ponto no tempo durante a execução de um programa. Normalmente é utilizado durante a depuração do código.
+
+
+
+09) O que é e como funciona o on e final no tratamento de erros? Em que caso devemos utilizar? Há uma camada da aplicação correta em utilizá-lo? Exemplifique.
+(on) - A instrução "On" deve ser executada antes da ocorrência de um erro na mesma função ou sub-rotina onde ocorreu o erro ou em uma função ou sub-rotina que tenha chamado a função ou sub-rotina onde o erro tiver ocorrido.
+(final) - Você deve utilizar finally para finalizar/liberar recursos que você possa ter usado em um try , mesmo que um exceção seja lançada, o código no finally será executado.
+
+
+10) O que é e como funciona o rethrow? Em que caso devemos utilizar? Exemplifique.
+Se você decidir relançar uma exceção, prefira usar a instrução rethrow em vez de lançar o mesmo objeto de exceção usando throw.
+
+
+11) No try/catch, o que é captura de erros? Como é realizada - sintaxe? Quais são os tipos de capturas possíveis? Quais são as diferenças? 
+A primeira captura do erro no bloco catch, o uso do try serve para indicar que o código está tentando realizar algo arriscado no sistema.
+
+
+12) Explique e exemplifique o uso das cláusulas on e finally no bloco try-cath. 
+(finally) - O finally sempre finaliza a sequência de comandos do sistema, independente de ocasionar algum erro no sistema. 
+(On) - A instrução "On" deve ser executada antes da ocorrência de um erro na mesma função ou sub-rotina onde ocorreu o erro ou em uma função ou sub-rotina que tenha chamado a função ou sub-rotina onde o erro tiver ocorrido.
+
+13) É possível criar exceções específicas? Se sim, em que caso podem ser utilizas? Quais são os cuidados que devemos ter. Exemplifique.
+Sim, podem ser utilizadas na função que foram especificadas. Deve-se tomar cuidado com o problema, o contexto, o ambiente que está sendo desenvolvido pode determinar o que é mais adequado.
+
+
+14) Implemente o try-catch (com relevância) nas funções do seu projeto – pelo menos 5 funções. Faça o tratamento de erro específico e geral. 
+
+
+
+
+15) Analise o seu projeto e crie exceções específicas que facilite a localização e a manutenção do projeto.
+
+
+
+16) O que é e para que serve o Either? Qual a relação e qual a diferença com o try-cath? Faça um exemplo no contexto do seu projeto.
+
+
+
