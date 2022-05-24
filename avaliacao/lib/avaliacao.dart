@@ -16,7 +16,8 @@ void mostrar() {
     [6] - Salário com valor do Sindicato;
     [7] - Verificar se há desconto negativo;
     [8] - Verificar se há parte do salário negativo;
-    [9] - Calcular FGTS;
+    [9] - Calcular FGTS mensal;
+    [10] - Calcular Vale Alimentação mensal;
     -------------------------------------
     ''');
     print(mensagem.toUpperCase());
@@ -136,11 +137,19 @@ void mostrar() {
           double quantidadeHora = double.parse(stdin.readLineSync()!);
           print('Informe o valor das horas trabalhadas:');
           double valorHora = double.parse(stdin.readLineSync()!);
-          print('Informe o valor de vezes que recebeu salário:');
-          double quantidadeSalarios = double.parse(stdin.readLineSync()!);
           double salarioTotal = quantidadeHora * valorHora;
-          double fgts = salarioTotal * 0.4;
-          return 'Valor do FGTS: ${fgts}';
+          double fgts = salarioTotal * 0.08;
+          return 'Valor do FGTS mensal: ${fgts}';
+        });
+      } else if (opcao == 10) {
+        resultado = interface(() {
+          print('Informe a quantidade de horas trabalhadas:');
+          double quantidadeHora = double.parse(stdin.readLineSync()!);
+          print('Informe o valor das horas trabalhadas:');
+          double valorHora = double.parse(stdin.readLineSync()!);
+          double salarioTotal = quantidadeHora * valorHora;
+          double valeAlimentacao = salarioTotal * 0.2;
+          return 'Valor do Vale alimentação mensal: ${valeAlimentacao}';
         });
       } else {
         print("Opção inválida!");
@@ -171,7 +180,7 @@ double salarioLiquido(double quantidadeHora, double valorHora,
   return salarioLiquido;
 }
 
-//FUnção que retorna o salário bruto
+//Função que retorna o salário bruto
 double salarioBruto([double quantidadeHora = 300, double valorHora = 8.5]) {
   double salarioTotal = quantidadeHora * valorHora;
   return salarioTotal;
@@ -223,9 +232,15 @@ double salariocomSindicato(
 dynamic calcularFgts(double valorHora, double quantidadeHora,
     double quantidadeSalarios, double fgts) {
   double salarioTotal = quantidadeHora * valorHora;
-  double valorquantidadeSalario = salarioTotal * quantidadeSalarios;
-  fgts = valorquantidadeSalario * 0.4;
+  fgts = salarioTotal * 0.08;
   return fgts;
+}
+
+dynamic calcularValeAlimentacao(
+    double valorHora, double quantidadeHora, double valeAlimentacao) {
+  double salarioTotal = quantidadeHora * valorHora;
+  valeAlimentacao = salarioTotal * 0.2;
+  return valeAlimentacao;
 }
 
 String interface(Function minhaFuncao) {
