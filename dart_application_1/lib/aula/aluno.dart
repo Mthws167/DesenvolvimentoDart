@@ -1,21 +1,25 @@
+import 'package:email_validator/email_validator.dart';
+
 main() {
   var aluno = Aluno(
-  RA: 20200024725, nome: "Matheus  ", sobrenome: "Henrique de Oliveira");
-  aluno._CPF = "108.741.389-30";
+      RA: 20200024725, nome: "Matheus", sobrenome: "Henrique de Oliveira");
+  aluno._CPF = "***.741.38*-**";
   aluno._anoNascimento = 2001;
+  aluno._email = "mthws.henrique@hotmail.com";
   print(aluno._anoNascimento);
   print(aluno.RA);
   print(aluno._CPF);
-  print(aluno.email);
-  print("${aluno.nome}${aluno.sobrenome}");
+  print(aluno._email);
+  print(aluno.getNomeCompleto());
   print("${aluno.getIdadeAtual()}");
 }
+
 class Aluno {
   int RA;
   String nome;
   String sobrenome;
   late String _CPF;
-  String? email;
+  late String _email;
   late int _anoNascimento;
 
   int get anoNascimento => _anoNascimento;
@@ -32,6 +36,16 @@ class Aluno {
     }
   }
 
+  String get email {
+    return this._email;
+  }
+
+  set email(String email) {
+    if ( email != null && !EmailValidator.validate(email)) {
+      this._email = email;
+    } 
+  }
+
   int getIdadeAtual() {
     var anoAtual = DateTime.now().year;
     return anoAtual - anoNascimento;
@@ -43,9 +57,5 @@ class Aluno {
 
   String? telefone;
 
-  Aluno(
-      {required this.RA,
-      required this.nome,
-      required this.sobrenome,
-      this.email});
+  Aluno({required this.RA, required this.nome, required this.sobrenome});
 }
